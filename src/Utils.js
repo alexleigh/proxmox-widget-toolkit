@@ -1043,6 +1043,10 @@ utilities: {
 	return Proxmox.Utils.render_size_usage(record.used, record.total);
     },
 
+	render_node_temp: function(record) {
+		return record.used.toFixed(1) + '°C (crit: ' + record.total.toFixed(1) + '°C)';
+	},
+
     loadTextFromFile: function(file, callback, maxBytes) {
 	let maxSize = maxBytes || 8192;
 	if (file.size > maxSize) {
