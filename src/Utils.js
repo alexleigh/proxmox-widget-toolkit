@@ -1047,6 +1047,9 @@ utilities: {
     },
 
 	render_node_temp: function(record) {
+		if (!record || !Ext.isNumeric(record.used) || !Ext.isNumeric(record.total)) {
+			return '-';
+		}
 		return record.used.toFixed(1) + '°C (crit: ' + record.total.toFixed(1) + '°C)';
 	},
 
